@@ -22,7 +22,6 @@ public class ApiHuckMeBankTests {
         }
         assert response != null;
         Assert.assertEquals(response.getText(), message);
-
     }
 
     public <T>T registrationRequest(UserRegistrationData data, Class<T> responseClass) {
@@ -42,9 +41,6 @@ public class ApiHuckMeBankTests {
         return new Object[][]{
                 {1, "Сейчас на ваш телефон поступит звонок, последние 4 цифры являются кодом"},
                 {JsonReader.getNumParam(TEST_DATA_PATH, "startUrl"), "Подождите 15 секунд перед повторной авторизации на тот же номер"},
-
-
         };
     }
-
 }

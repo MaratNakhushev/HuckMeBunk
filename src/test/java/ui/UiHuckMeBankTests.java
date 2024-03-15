@@ -23,7 +23,6 @@ public class UiHuckMeBankTests extends BaseUI {
                 .inputAllData(UserTestDataFactory.getRandomValidUserRegistrationData())
                 .clickRegistrationButton()
                 .closeAlert();
-
         Assert.assertTrue(validationCodeForm.isDisplayed());
     }
 
@@ -46,19 +45,15 @@ public class UiHuckMeBankTests extends BaseUI {
 
         registrationForm.clickRegistrationButton();
         Assert.assertEquals(registrationForm.getAlertText(), "Количество запросов достигло максимума,вы можете отправлять запрос один раз в 35 минут");
-
     }
 
     @DataProvider(name = "testData")
     public Object[][] testData() {
 
-        return new Object[][] {
+        return new Object[][]{
                 {faker.letterify("?"), "Ваше имя (ФИО) не должно быть короче 3 символов."},
                 {faker.numerify("#"), "Имя может содержать только буквы английского и русского алфавита"},
                 {faker.regexify("[a-zA-Z]{" + (30 + faker.number().numberBetween(1, 21)) + "}"), "\"ФИО\" может содержать максимум 30 символов"},
-
         };
     }
 }
-
-
