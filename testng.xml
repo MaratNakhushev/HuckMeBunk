@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "ht0tp://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="C:/Users/marat/IdeaProjects/HuckMeBank/src/test/java">
+        <classes>
+            <class name="api.ApiHuckMeBankTests">
+                <methods>
+                    <include name="checkValidDataInput"/>
+                    <include name="checkValidDataForTimes"/>
+                </methods>
+            </class>
+            <class name="ui.UiHuckMeBankTests">
+                <methods>
+                    <include name="checkValidDataInput"/>
+                    <include name="inputInvalidName"/>
+                    <include name="checkSecondAlertMessage"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

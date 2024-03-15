@@ -1,0 +1,6 @@
+{
+  "browserType": "chrome",
+  "browserSize": "2560x1140",
+  "headLess": false
+
+}
