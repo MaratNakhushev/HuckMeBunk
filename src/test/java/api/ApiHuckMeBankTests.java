@@ -12,7 +12,6 @@ import static io.restassured.RestAssured.given;
 public class ApiHuckMeBankTests {
 
 
-
     @Test(groups = "Api tests", dataProvider = "testData")
     public void checkValidDataInput(int numberOfIdenticalRequest, String message) {
         ValidRegisterDataResponse response = null;
@@ -24,7 +23,7 @@ public class ApiHuckMeBankTests {
         Assert.assertEquals(response.getText(), message);
     }
 
-    public <T>T registrationRequest(UserRegistrationData data, Class<T> responseClass) {
+    public <T> T registrationRequest(UserRegistrationData data, Class<T> responseClass) {
         Specification.setSpecifications(Specification.requestSpec(JsonReader.getStringParam(TEST_DATA_PATH, "startUrl")), Specification.responseSpec());
         return given()
                 .body(data).log().all()
